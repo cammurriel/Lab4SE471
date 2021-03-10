@@ -2,7 +2,7 @@ package AgentDemo;
 
 import static java.lang.Thread.sleep;
 
-public class CIA_Agent implements runnable, Agent_IF{
+public class CIA_Agent implements Runnable, Agent_IF{
     private boolean workingInProgress;
     private String myFootPrint;
 
@@ -26,17 +26,25 @@ public class CIA_Agent implements runnable, Agent_IF{
         this.myFootPrint = footprint;
     }
     @Override
-    public void run() throws InterruptedException {
+    public void run() {
         while(true)
         {
            if(workingInProgress)
            {
-               sleep(100);
+               try {
+                   sleep(100);
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               }
                System.out.println(myFootPrint);
            }
            else
            {
-             sleep(500);
+               try {
+                   sleep(500);
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               }
            }
             }
         }//end of CIA_Agent
@@ -49,5 +57,8 @@ public class CIA_Agent implements runnable, Agent_IF{
 
     }
 
-    private void processing(){} //needs to be finished
+    private void processing(){
+        System.out.println("Processing CIA_Agent please wait....");
+    }
+
     }

@@ -6,9 +6,9 @@ public class ObjectPool implements ObjectPool_IF {
     private int instanceCount;
     private int maxInstances;
     private Object [] pool;
-    private ObjectPool poolInstance;
+    private static ObjectPool poolInstance;
     ObjectCreation_IF creator;
-   // private lockObject Object;
+
     ObjectPool()
     {
         size = 0;
@@ -25,8 +25,8 @@ public class ObjectPool implements ObjectPool_IF {
         pool = new Object[maxInstances];
 
     }
-
-    public ObjectPool getPoolInstance(ObjectCreation_IF c, int max) {
+    //made getPoolInstance static
+    public static ObjectPool getPoolInstance(ObjectCreation_IF c, int max) {
         if (poolInstance==null)
             poolInstance = new ObjectPool(c, max);
         return poolInstance;

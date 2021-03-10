@@ -16,8 +16,10 @@ public class CIA_Agent_Creator implements ObjectCreation_IF {
     {
         return index;
     }
-    public int getTaskID()
+   /* public int getTaskID()
     {
         return taskID;
     }
+
+    */
 }
