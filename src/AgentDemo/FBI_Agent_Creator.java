@@ -19,5 +19,4 @@ public class FBI_Agent_Creator implements ObjectCreation_IF {
         return agent;
     }
 
-
 }

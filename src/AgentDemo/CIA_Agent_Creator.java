@@ -9,17 +9,21 @@ public class CIA_Agent_Creator implements ObjectCreation_IF {
     public Object create()
     {
         CIA_Agent agent = new CIA_Agent(footprints[index++]);
-        //new Thread(agent).start();
+        agent.setTaskID(index);
+        new Thread(agent).start();
         return agent;
     }
-    public int getIndex()
+    /*public int getIndex()
     {
         return index;
     }
-   /* public int getTaskID()
+    public int getTaskID()
     {
+
         return taskID;
     }
 
-    */
+     */
+
+
 }

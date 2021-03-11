@@ -118,7 +118,7 @@ public class ObjectPool implements ObjectPool_IF {
             else
             {
                 do{
-                    wait();
+                    lockObject.wait();
                 }
                 while(size <= 0);
                 return removeObject();

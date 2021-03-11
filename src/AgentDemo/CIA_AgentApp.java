@@ -8,6 +8,7 @@ public class CIA_AgentApp {
 
     for (int i = 0; i < 10; i++)
         {
+           // i++;
             Thread client = new Thread(new TaskRequester(server));
             client.start();
         }
